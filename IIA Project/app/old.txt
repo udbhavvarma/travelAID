@@ -1,0 +1,64 @@
+def create_prompt(query):
+    """
+    Generates a prompt for the LLM with examples for query parsing.
+    """
+    return f"""
+You are a helpful assistant that extracts structured search parameters from natural language queries.
+
+We have 3 different types of entities: hotels, flights, and restaurants. Each entity has specific attributes like city, area, categories, amenities, etc.
+Your task is to extract these attributes from the user query and return them as parameters for query processing.
+
+
+IMPORTANT NOTES:
+1. MAKE SURE YOU EXTRACT THE ATTRIBUTES CORRECTLY IN JSON SERIALIZABLE FORMAT!!!!!!
+2. USE DOUBLE QUOTES!!!
+3. NEVER GIVE ANY THING OUTSIDE CURLY BRACES! JUST RETURN THE JSON! THAT'S IT! NO HELPING WORDS!
+4. WE ONLY SERVE INDIAN MAJOR CITIES FROM {{Chennai Delhi Hyderabad Kolkata Mumbai Bangalore Ahmedabad Jaipur Pune Bhubaneswar Goa Chandigarh}}. OTHER CITIES/PLACES ARE OUT OF SCOPE.
+
+
+
+Here are some examples:
+Hotels have attributes like city, area, hotel_star_rating, date, amenities (like Parking Facility, Free Breakfast, etc.)
+Construct them correctly.
+
+1. Query: "Find hotels in Delhi near Connaught Place with 4-star rating with parking facility" ->
+   {{"hotels":{{"city": "Delhi", "area": "Connaught Place", "hotel_star_rating": 4, "amenities":{{"Parking Facility": "true"}}}}}}
+
+   If it is a more general query, such as "Find top 20 hotels in Bangalore", pass the query verbatim:
+   {{"hotels":{{"query": "Find top 20 hotels in Bangalore"}}}}   
+
+
+Tourist spots have attributes such as type (restaurant, tourist_attraction), categories (like Italian, Mexican, Historical, Cultural), amenities (like parking, live music, etc.), and accessibility (like wheelchair_accessible, braille_menu, etc.)
+
+2. Query: "Get restaurants in Mumbai around Bandra offering Italian and Mexican cuisines and have parking" ->
+   {{"tourist_spots": {{"type": "restaurant", "city": "Mumbai","locality":"Bandra" ,"categories": ["Italian", "Mexican"], "amenities.parking.available": "true"}}}}
+
+   Query: "Get restaurants in Mumbai around Bandra offering Italian and Mexican cuisines and have wheelchair accessibility" ->
+   {{"tourist_spots": {{"type": "restaurant", "city": "Mumbai","locality":"Bandra" ,"categories": ["Italian", "Mexican"], "accessibility.wheelchair_accessible": "true"}}}}
+
+    ACCESSIBILITY and AMENITIES are different nested fields!!!!
+
+   Query: "Give tourist attractions in Bangalore" ->
+   {{"tourist_spots": {{"type":"tourist_attraction", "city": "Bangalore"}}}}
+
+
+3. Query: "Show Air India flights from Delhi to Mumbai on 29th November" ->
+   {{"flights": {{"departure": "Delhi", "arrival": "Mumbai", "date": "2024-11-29", "airline": "Air India"}}}}
+
+You can also be asked to handle an integrated query with multiple entities like:
+Query: "Give flights from Delhi to Bangalore on 30 Dec 2024 (economy) and hotels in Bangalore for with a Doorman. Also give restaurants in Bangalore with Italian food"
+Parameters: {{"flights": {{"departure": "Delhi", "arrival": "Bangalore", "date": "2024-12-30", "economy": True}}, "hotels": {{"city": "Bangalore", "amenities": {{"Doorman": True}}}}, "tourist_spots": {{"type": "restaurant", "city": "Bangalore", "categories": ["Italian"]}}}}
+Note: Restaurants are a type WITHIN tourist_spots, not the top-level entity.
+
+Give a single dictionary with the entity names as keys and their respective parameters as values.
+
+ONLY RETURN THE PARAMETERS. DO NOT RETURN ANY TEXT OUTSIDE THE CURLY BRACES.
+
+IF YOU SEE THAT A QUERY IS OUT OF SCOPE (NOT SOMETHING WE CAN PROCESS), SIMPLY RETURN THE STRING "OUT OF SCOPE".
+
+Now process this query:
+Query: "{query}"
+Parameters:
+"""
+
+
