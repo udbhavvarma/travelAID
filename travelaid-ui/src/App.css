@@ -1,0 +1,432 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  
+}
+
+label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* App Container */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+/* .right-column {
+  width: 50%; 
+  background-color: #c5ffc1;
+  border-left: 1px solid #ddd;
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; 
+  padding-left: 20px;
+  
+} */
+
+/* Header Styling */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #4caf50;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  width: 800px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.search-bar input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+  outline: none;
+  
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #45a049;
+}
+
+/* Form Sections */
+.form-section {
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.form-section input {
+  width: 35%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-section .price-input {
+  width: 20% !important;
+  margin-right: 10px;
+}
+
+.form-section select {
+  width: 35%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.form-section label {
+  display: block;
+}
+.form-section button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px 0;
+  margin-right: 10px;
+  display: block;
+}
+
+.form-section button:hover {
+  background-color: #45a049;
+}
+
+.select{
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.amenities {
+  display: flex-wrap;
+  margin-top: 10px;
+
+  justify-content: space-between;
+}
+
+.amenities label {
+  display: inline;
+  margin-bottom: 5px;
+}
+.amenities .amenity-checkbox {
+  margin-right: 5px;
+  height: 16px;
+  width: 16px;
+}
+
+@font-face {
+  font-family: "Faustina", serif;
+  src: url('https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&display=swap');
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Results Section */
+.results-section {
+  padding-top: 20px;
+  padding-right: 20px;
+  background-color: rgb(169, 250, 149);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.results-section h2 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+  color: #4caf50;
+}
+
+.results-section pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+
+.results-section {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.results-section h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #4caf50;
+}
+
+.results-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.results-section li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.results-section li strong {
+  color: #333;
+}
+
+.results-section p {
+  color: #555;
+}
+
+.results-section {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.results-section h2 {
+  font-size: 1.5rem;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.results-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.results-section li {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.results-section li strong {
+  color: #333;
+}
+
+
+.filters {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.filters h4 {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.filters div {
+  display: inline-block;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.filters input[type="checkbox"] {
+  margin-right: 10px;
+
+}
+
+
+.filters label {
+  margin-left: 25px;
+}
+
+
+/* Buttons */
+.blue-button {
+  transition: all 0.2s ease-in-out;
+  background-color: #6783ff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  margin: auto;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .search-bar input {
+    width: 60%;
+  }
+
+  .form-section h3 {
+    font-size: 1.25rem;
+  }
+
+  .results-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+.out-of-scope-section {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #adffb5;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.out-of-scope-section h2 {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.out-of-scope-section p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* General container styling */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: flex-start; /* Align content at the top */
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(90deg, rgba(130,255,136,1) 0%, rgba(142,255,126,1) 43%, rgb(141, 255, 232) 100%);
+  font-family: 'Faustina', serif; /* Applied from the imported font */
+}
+
+/* Top section */
+.top-section {
+  padding: 20px;
+  width: 100%;
+  font-size: 1.5rem;
+  color: #03d000;
+  font-family: "Faustina", serif;
+  margin: auto;
+  text-align: center;
+}
+
+.top-section .app-name h1 {
+  margin: auto;
+  font-size: 5rem;
+  font-weight: 800;
+  color: #027d00;
+}
+
+/* Mid section */
+.mid-section {
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff; /* Optional background color */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the search bar and buttons */
+  gap: 20px; /* Add space between elements */
+  margin: 20px;
+}
+
+.mid-section .blue-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mid-section .blue-button:hover {
+  background-color: #0056b3;
+}
+
+/* Bottom section */
+.bottom-section {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(90deg, rgba(130,255,136,1) 0%, rgba(142,255,126,1) 43%, rgb(141, 255, 232) 100%)  ; /* Example light background */
+  overflow-y: auto; /* Enable scrolling if results are too long */
+  flex-grow: 1; /* Allow the bottom section to expand if necessary */
+}
+
+/* Ensure responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .top-section .app-name h1 {
+    font-size: 2rem;
+  }
+
+  .mid-section {
+    padding: 15px;
+  }
+
+  .bottom-section {
+    padding: 15px;
+  }
+}
